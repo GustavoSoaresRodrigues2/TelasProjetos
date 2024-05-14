@@ -52,7 +52,7 @@ public class InterfaceElevador extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Elevador");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoDentro.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoDentro.jpg"))); // NOI18N
 
         btn_andar3.setText("Andar 3");
         btn_andar3.addActionListener(new java.awt.event.ActionListener() {
@@ -173,27 +173,27 @@ public class InterfaceElevador extends javax.swing.JFrame{
             public void run() { 
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada1.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada1.jpg")));             
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada2.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada2.jpg")));   
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada3.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada3.jpg")));         
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada4.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada4.jpg")));           
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada5.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada5.jpg")));           
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechadatotal.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechadatotal.jpg")));
                 } catch (Exception e) {}
             }
         };
@@ -204,31 +204,31 @@ public class InterfaceElevador extends javax.swing.JFrame{
             public void run() { 
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechadatotal.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechadatotal.jpg")));
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada5.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada5.jpg")));           
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada4.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada4.jpg")));           
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada3.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada3.jpg")));         
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada2.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada2.jpg")));   
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoportafechada1.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoportafechada1.jpg")));             
                 } catch (Exception e) {}
                 try {
                     Thread.sleep(200);
-                    jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\visaoDentro.jpg"));             
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visaoDentro.jpg")));        
                 } catch (Exception e) {}
             }
         };
