@@ -1,42 +1,41 @@
 package com.mycompany.analiselexica;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AnaliseLexica {
-
-    
+    static String caminhoTxt = "src/main/java/com/mycompany/analiselexica/arquivo/arquivoanalise.txt";
 
     public static void main(String[] args) {
-        String codigoJava = "public class test {\n" +
-            "public static void main(String[] args) {\n" +
-                "/* testando comentario */\n" +
-                "int idade = 30.5;\n" +
-                "idade += 2;\n" +
-                "double soma = 98.6 + 45 - 12 / 78 * 3;\n" +
-                "for (int i = 0; i <= idade; i++) {\n" +
-                    "System.out.println(\"Contagem de Idade: \" + i);\n" +
-                "}\n" +
-            "}\n" +
-        "}";
 
-        ArrayList<Token> tokens = analisar(codigoJava);
+        try {
+            String arquivo = new String(Files.readAllBytes(Paths.get(caminhoTxt)));
+            System.out.println(arquivo);
+            ArrayList<Token> tokens = analisar(arquivo);
 
-        System.out.println("Tokens:");
-        for (Token token : tokens) {
-            System.out.println(token);
+            System.out.println("Tokens:");
+            for (Token token : tokens) {
+                System.out.println(token);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Erro");
         }
     }
 
     public static ArrayList<Token> analisar(String codigo) {
         ArrayList<Token> tokens = new ArrayList<>();
-        
+
         Pattern comentarioPattern = Pattern.compile("//.*|/\\*(?:.|[\\n\\r])*?\\*/");
         codigo = comentarioPattern.matcher(codigo).replaceAll("");
-        
-        Pattern padrao = Pattern.compile("\\b(args|System|public|private|static|class|void|int|double|String|if|else|else if|switch|while|do|for)\\b|\\{|\\}|\\(|\\)|\\[|\\]|\\;|\\=|\\\"(?:[^\\\"]|\\\"{2})*\\\"|\\d+(\\.\\d+)?|\\b(main|printf|println|print|out|[a-zA-Z_]\\w*)\\b|==|!=|>=|<=|[-+*/<>]");
-    
+
+        Pattern padrao = Pattern.compile(
+                "\\b(args|System|public|private|static|class|void|int|double|String|if|else|else if|switch|while|do|for)\\b|\\{|\\}|\\(|\\)|\\[|\\]|\\;|\\=|\\\"(?:[^\\\"]|\\\"{2})*\\\"|\\d+(\\.\\d+)?|\\b(main|printf|println|print|out|[a-zA-Z_]\\w*)\\b|==|!=|>=|<=|[-+*/<>]");
+
         Matcher matcher = padrao.matcher(codigo);
         int posicaoInicio = 0;
         while (matcher.find()) {
@@ -49,7 +48,8 @@ public class AnaliseLexica {
             TokenType tipo = null;
             if (token.matches("\\b(args|static|main|printf|println|print|out)\\b")) {
                 tipo = TokenType.IDENTIFICADOR;
-            } else if (token.matches("\\b(System|if|else|else if|switch|while|do|for|public|private|class|void|int|double|String)\\b")) {
+            } else if (token.matches(
+                    "\\b(System|if|else|else if|switch|while|do|for|public|private|class|void|int|double|String)\\b")) {
                 tipo = TokenType.PALAVRA_RESERVADA;
             } else if (token.matches("\\b[a-zA-Z_]\\w*\\b")) {
                 tipo = TokenType.ID;
@@ -107,7 +107,7 @@ public class AnaliseLexica {
             tokens.addAll(analisarParte(parte, padrao));
         }
         return tokens;
-    }  
+    }
 
     public static ArrayList<Token> analisarParte(String parte, Pattern padrao) {
         ArrayList<Token> tokens = new ArrayList<>();
@@ -118,9 +118,9 @@ public class AnaliseLexica {
             switch (token) {
                 case "\\\"(?:[^\\\"]|\\\"{2})*\\\"":
                     tipo = TokenType.STRING;
-                break;
+                    break;
                 default:
-                break; 
+                    break;
             }
             tokens.add(new Token(token, tipo));
         }
