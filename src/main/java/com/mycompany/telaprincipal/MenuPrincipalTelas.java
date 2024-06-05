@@ -4,6 +4,8 @@
  */
 package com.mycompany.telaprincipal;
 
+import com.mycompany.analiselexica.AnaliseLexica;
+import com.mycompany.analiselexica.TelaAnaliseLexica;
 import com.mycompany.interfaceelevador.InterfaceElevador;
 import com.mycompany.maquinadedoce.TelaMaquina;
 
@@ -18,6 +20,7 @@ public class MenuPrincipalTelas extends javax.swing.JFrame {
      */
     public MenuPrincipalTelas() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -50,7 +53,12 @@ public class MenuPrincipalTelas extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("...");
+        jButton3.setText("Analise Lexica");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,8 +69,8 @@ public class MenuPrincipalTelas extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(42, 42, 42)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
@@ -90,6 +98,13 @@ public class MenuPrincipalTelas extends javax.swing.JFrame {
         TelaMaquina.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        TelaAnaliseLexica TelaAnaliseLexica = new TelaAnaliseLexica();
+        TelaAnaliseLexica.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
