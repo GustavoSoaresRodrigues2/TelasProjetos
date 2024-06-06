@@ -10,12 +10,12 @@ import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 
-/**
+/** 
  *
  * @author 823133821
  */
 public class TelaAnaliseLexica extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaAnaliseLexica
      */
